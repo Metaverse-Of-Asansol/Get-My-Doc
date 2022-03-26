@@ -1,0 +1,28 @@
+{
+  "name": "geoproject",
+  "version": "1.0.0",
+  "description": "A web app based on Geography",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "client" : "cd Client && npm run dev",
+    "start": "concurrently \"npm run dev\" \" npm run client\""
+  },
+  "keywords": [
+    "mern",
+    "react",
+    "node",
+    "mongodb"
+  ],
+  "author": "Abir Pal",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
