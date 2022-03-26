@@ -14,8 +14,8 @@ export default function Navbar(){
                 <div className="nav-link-wrapper">
                     <ul className={showMenu ? "nav-link-list h-fit-tran" : "nav-link-list"}>
                         <li className="nav-link-items"><Link to="/">Home</Link></li>
-                        <li className="nav-link-items"><Link to="/aboutus">About</Link></li>
-                        <li className="nav-link-items"><Link to="/features">Features</Link></li>
+                        <li className="nav-link-items"><Link to="/">About</Link></li>
+                        <li className="nav-link-items"><Link to="/">Features</Link></li>
                     </ul>
                 </div>
                 <div className="nav-btn-wrapper">
