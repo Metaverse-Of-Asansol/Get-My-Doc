@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import "./App.css"
-import Home from './Pages/Home'
+import Routers from './Routes'
 
 const App = () => {
   // const [message , setMessage] = useState("")
@@ -28,7 +28,7 @@ const App = () => {
   
   return (
     <>
-      <Home />
+      <Routers />
     </>
   )
 }
