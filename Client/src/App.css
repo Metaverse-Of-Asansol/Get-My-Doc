@@ -1,28 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Pacifico&family=Poppins:wght@200&family=Roboto+Serif:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&family=Pacifico&family=Poppins:wght@200&family=Ramaraja&family=Roboto+Serif:wght@100&display=swap');
 *,
 ::before,
-::after{
-    padding: 0;
-    margin: 0;
+::after {
+  padding: 0;
+  margin: 0;
 }
 
-:root{
-    /* Colors */
-    --clr-main : #3b80f5 ;
-    --clr-btn-bg: #735cde ;
-    --clr-logo: #4c217e;
-    /* Font sizes */
-    --max-font: 1rem;
+:root {
+  /* Colors */
+  --clr-main: #3b80f5;
+  --clr-secondary: #735cde;
+  --clr-btn-bg: #ffff;
+  --clr-logo: #4c217e;
+  /* Font sizes */
+  --max-font: 1rem;
 }
-body{
-    box-sizing: border-box;
+body {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
 }
 .btn {
-    padding: 0.7rem 1rem;
-    color: white;
-    background-color: var(--clr-btn-bg);
-    border-radius: 2rem;
-    cursor: pointer;
-    border: none;
-    transition: 500ms;
-    font-size: 1rem;
-  }
+  padding: 0.7rem 1rem;
+  background-color: var(--clr-btn-bg);
+  border-radius: 2rem;
+  cursor: pointer;
+  border: none;
+  transition: 500ms;
+  font-size: 1rem;
+}

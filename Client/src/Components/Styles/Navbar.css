@@ -2,6 +2,10 @@
     width:100%;
     padding:2rem 0;
     position: relative;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .navContent{
     width: 100%;
@@ -12,18 +16,20 @@
 }
 .logo{
     display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    margin-left: 1rem;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+.logo img{
+    height: 3rem;
 }
 .logo p{
-    color: var(--clr-btn-bg);
     font-weight: 600;
 }
 .nav-link-wrapper ul li a{
     text-decoration: none;
     font-weight: 600;
-    /* color: white; */
+    color: white;
 }
 .nav-link-wrapper ul{
     list-style: none;
@@ -38,10 +44,10 @@
 .menu-btn{
     display: none;
 }
-.sign-in-btn{
+/* .sign-in-btn{
     color: var(--clr-btn-bg) !important;
     background-color: white !important;
-}
+} */
 
 
 @media (max-width: 500px){

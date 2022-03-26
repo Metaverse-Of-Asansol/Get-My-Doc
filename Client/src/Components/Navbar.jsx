@@ -8,7 +8,8 @@ export default function Navbar(){
         <nav className="nav">
             <div className="navContent">
                 <div className="logo">
-                    <img src="/assets/logos/logo.svg" alt="logo" />
+                    <img src="/assets/logo.png" alt="logo" />
+                    <p className="logo-text">Get My Docs</p>
                 </div>
                 <div className="nav-link-wrapper">
                     <ul className={showMenu ? "nav-link-list h-fit-tran" : "nav-link-list"}>
