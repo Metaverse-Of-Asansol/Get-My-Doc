@@ -1,0 +1,28 @@
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    /* Colors */
+    --clr-main : #3b80f5 ;
+    --clr-btn-bg: #735cde ;
+    --clr-logo: #4c217e;
+    /* Font sizes */
+    --max-font: 1rem;
+}
+body{
+    box-sizing: border-box;
+}
+.btn {
+    padding: 0.7rem 1rem;
+    color: white;
+    background-color: var(--clr-btn-bg);
+    border-radius: 2rem;
+    cursor: pointer;
+    border: none;
+    transition: 500ms;
+    font-size: 1rem;
+  }

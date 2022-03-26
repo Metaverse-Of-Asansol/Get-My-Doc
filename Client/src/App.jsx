@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import "./App.css"
+import Navabar from './Components/Navbar'
 
 
 const App = () => {
@@ -27,6 +29,7 @@ const App = () => {
   
   return (
     <>
+      <Navabar />
       <h1>Hi Everyone!</h1>
       <p>{message}</p>
       <h2>{msg}</h2>
