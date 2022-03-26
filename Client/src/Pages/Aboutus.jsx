@@ -3,7 +3,14 @@ import Base from '../Base'
 
 const Aboutus = () => {
   return (
-    <Base>About Us Page</Base>
+    <Base>
+    <div className="about-heading">
+      <p>About US</p>
+    </div>
+    <div className="about_content">
+      
+    </div>
+    </Base>
   )
 }
 

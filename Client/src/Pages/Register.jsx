@@ -35,6 +35,7 @@ const Register = () => {
             <div className={styles.overlay}>
               <div
                 className={`${styles["overlay-panel"]} ${styles["overlay-right"]}`}
+                style={{padding: 0}}
               >
                 <h1 className={styles.register_title}>
                   Already have an account?

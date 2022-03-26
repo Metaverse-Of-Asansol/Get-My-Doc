@@ -3,9 +3,10 @@
     padding:2rem 0;
     position: relative;
     z-index: 10;
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    left: 0;
+    left: 0; */
+    position: relative;
 }
 .navContent{
     width: 100%;
@@ -51,9 +52,6 @@
 
 
 @media (max-width: 500px){
-    .nav{
-        padding-left: 1rem;
-    }
     .nav-btn{
         display: none;
     }
@@ -70,9 +68,8 @@
         left: 0;
         width: 100%;
         height: 0;
-        background-color: var(--clr-main-bg);
+        background-color: var(--clr-secondary);
         text-align: center;
-        opacity: 0.9;
         transition: all 300ms linear;
         overflow: hidden;
     }
@@ -84,6 +81,13 @@
         margin: 5px 0;
         padding: 10px;
         border-radius: 1rem;
+    }
+    .logo{
+        margin: 0;
+    }
+    .navContent{
+        width: 90%;
+        margin: 0 auto;
     }
     
 }

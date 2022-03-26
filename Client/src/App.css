@@ -29,6 +29,11 @@ body {
 .dislay-3 {
   font-size: 1.5rem;
 }
+@media (max-width: 500px){
+    h1{
+        font-size:3rem;
+    }
+}
 .btn {
   padding: 0.7rem 1rem;
   background-color: var(--clr-btn-bg);
