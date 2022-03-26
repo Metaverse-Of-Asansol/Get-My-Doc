@@ -1,14 +1,14 @@
 import React from "react";
 import './Styles/Home.css'
 import Base from "../Base";
-import "./Styles/Home.css";
+
 
 const Home = () => {
   return (
     <Base>
       <section className="hero">
         <div className="hero-text">
-          <h1 className="hero-text-body">get your all docs in one place</h1>
+          <h1 className="hero-text-body dislay-1">get your all docs in one place</h1>
           <p className="hero-text-bottom">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
             illo quasi.

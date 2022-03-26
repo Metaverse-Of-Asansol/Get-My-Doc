@@ -20,13 +20,13 @@ body {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-h1 {
+.dislay-1 {
   font-size: 5rem;
 }
-h2 {
+.dislay-2 {
   font-size: 2rem;
 }
-h3 {
+.dislay-3 {
   font-size: 1.5rem;
 }
 .btn {
