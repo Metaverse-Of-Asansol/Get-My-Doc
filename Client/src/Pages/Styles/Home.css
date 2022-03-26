@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.heading{
+    display: block;
+    margin: auto;
+    width: fit-content;
+    color: red;
+    align-items: center;
+}
