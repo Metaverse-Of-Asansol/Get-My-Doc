@@ -8,16 +8,12 @@ const documentschema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  category: {
-    type: String,
-    required: true,
-  },
   docLink: {
     type: String,
-    required: true,
   },
   docTags: {
     type: String,
+    required: true,
   },
   additionalInfo: {
     type: String,
