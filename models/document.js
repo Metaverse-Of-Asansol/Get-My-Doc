@@ -13,7 +13,7 @@ const documentschema = new mongoose.Schema({
     required: true,
   },
   docLink: {
-    type: Array,
+    type: String,
     required: true,
   },
   docTags: {

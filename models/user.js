@@ -17,6 +17,9 @@ const userschema = new mongoose.Schema({
   documents: {
     type: Array,
   },
+  tags: {
+    type: Array,
+  }
 });
 
 module.exports = mongoose.model("user", userschema);

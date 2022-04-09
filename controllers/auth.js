@@ -40,6 +40,7 @@ exports.register = async (req, res) => {
       name,
       email: email.toLowerCase(),
       password: myEncryPassword,
+      tags: ["Education", "Bills", "ID"]
     });
     console.log(user);
 
