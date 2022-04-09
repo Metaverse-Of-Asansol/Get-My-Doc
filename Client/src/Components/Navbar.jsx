@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useHistory } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import "./Styles/Navbar.css";
 
 export default function Navbar() {
   let navigate = useNavigate();
-  const history = useHistory();
 
   const [tokenChecker, setTokenChecker] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
@@ -14,12 +13,12 @@ export default function Navbar() {
     if (token) {
       setTokenChecker(false);
     }
+    console.log("Hi");
   };
 
 
   const logout = () =>{
     localStorage.clear();
-    // history.push("/register")
     navigate("/register");
     
   }
@@ -27,7 +26,7 @@ export default function Navbar() {
 
   useEffect(() => {
     checkToken();
-  }, []);
+  }, [tokenChecker, ]);
 
   return (
     <nav className="nav">
