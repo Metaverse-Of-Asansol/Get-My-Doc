@@ -19,10 +19,10 @@ export default function Navbar() {
               <Link to="/">Home</Link>
             </li>
             <li className="nav-link-items">
-              <Link to="/">About</Link>
+              <Link to="/aboutus">About</Link>
             </li>
             <li className="nav-link-items">
-              <Link to="/">Features</Link>
+              <Link to="/features">Features</Link>
             </li>
           </ul>
         </div>
@@ -35,8 +35,7 @@ export default function Navbar() {
           </Link>
           <button
             className="btn nav-btn menu-btn"
-            onClick={() => setShowMenu(!showMenu)}
-          >
+            onClick={() => setShowMenu(!showMenu)}>
             Menu
           </button>
         </div>
