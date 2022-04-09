@@ -3,10 +3,13 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 require("./config/database").connect();
+const auth = require("../Get-My-Doc/routes/auth");
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/api/v1", auth);
 
 app.get("/api/home", function (req, res) {
   res.json({
