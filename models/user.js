@@ -9,6 +9,7 @@ const userschema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    unique: true
   },
   password: {
     type: String,
@@ -17,6 +18,9 @@ const userschema = new mongoose.Schema({
   documents: {
     type: Array,
   },
+  tags: {
+    type: Array,
+  }
 });
 
 module.exports = mongoose.model("user", userschema);
