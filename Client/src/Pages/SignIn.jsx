@@ -3,10 +3,11 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'
 import { BsGoogle } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import styles from './Styles/signin.module.css'
+import Base from "../Base";
 
 const SignIn = () => {
   return (
-    <>
+    <Base>
       <div className={styles.login}>
         <div className={styles.container}>
           <div
@@ -15,15 +16,15 @@ const SignIn = () => {
             <form className={styles.login_form}>
               <h1 className={styles.login_title}>Sign in</h1>
               <div className={styles["social-container"]}>
-                <a href="#" className={styles.social}>
+                <Link href="#" className={styles.social}>
                   <FaFacebookF />
-                </a>
-                <a href="#" className={styles.social}>
+                </Link>
+                <Link href="#" className={styles.social}>
                   <BsGoogle />
-                </a>
-                <a href="#" className={styles.social}>
+                </Link>
+                <Link href="#" className={styles.social}>
                   <FaLinkedinIn />
-                </a>
+                </Link>
               </div>
               <p className={styles.forget_pass}>Or use your account</p>
               <input name="email" placeholder="Email" type="email" />
@@ -50,7 +51,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-    </>
+    </Base>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import './Styles/Home.css'
 import Base from "../Base";
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur
             illo quasi.
           </p>
-        <button className="btn">Sign Up</button>
+          <Link to="/register"><button className="btn">Sign Up</button></Link>
         </div>
         <div className="hero-img">
             <img className="folder-img" src="/assets/folder.png" alt="hero-image" />
