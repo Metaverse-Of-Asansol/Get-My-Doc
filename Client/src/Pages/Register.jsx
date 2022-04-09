@@ -1,12 +1,11 @@
 import React from "react";
-import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'
-import { BsGoogle } from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import styles from './Styles/register.module.css'
+import Base from "../Base";
 
 const Register = () => {
   return (
-    <>
+    <Base>
       <div className={styles.register}>
         <div className={styles.container}>
           <div
@@ -14,17 +13,6 @@ const Register = () => {
           >
             <form className={styles.register_form}>
               <h1 className={`${styles.register_title}`}>Register</h1>
-              <div className={styles["social-container"]}>
-                <a href="#" className={styles.social}>
-                  <FaFacebookF />
-                </a>
-                <a href="#" className={styles.social}>
-                  <BsGoogle />
-                </a>
-                <a href="#" className={styles.social}>
-                  <FaLinkedinIn />
-                </a>
-              </div>
               <input type="text" name="name" placeholder="Username" />
               <input name="email" placeholder="Email" type="email" />
               <input name="password" placeholder="Password" type="password" />
@@ -49,7 +37,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </>
+    </Base>
   );
 };
 

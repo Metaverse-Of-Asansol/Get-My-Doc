@@ -30,7 +30,6 @@
 .nav-link-wrapper ul li a{
     text-decoration: none;
     font-weight: 600;
-    color: white;
 }
 .nav-link-wrapper ul{
     list-style: none;
@@ -38,6 +37,11 @@
 .nav-link-wrapper ul li{
     display: inline-block;
     margin-right: 2rem ;
+    color: black;
+}
+.nav-link-items{
+    font-weight: 600;
+    color: black;
 }
 .nav-btn{
     margin-right: 1.7rem ;
