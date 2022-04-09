@@ -44,6 +44,9 @@
     color: black;
 }
 .nav-btn{
+    background-color: rgb(71, 214, 214);
+    font-weight: 600;
+    color: black;
     margin-right: 1.7rem ;
 }
 .menu-btn{

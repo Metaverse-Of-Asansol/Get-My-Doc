@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 require("./config/database").connect();
-const auth = require("../Get-My-Doc/routes/auth");
+const auth = require("./routes/auth");
 
 app.use(cors());
 app.use(express.json());

@@ -1,9 +1,34 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useHistory } from "react-router-dom";
 import "./Styles/Navbar.css";
 
 export default function Navbar() {
+  let navigate = useNavigate();
+  const history = useHistory();
+
+  const [tokenChecker, setTokenChecker] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
+
+  const checkToken = async () => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setTokenChecker(false);
+    }
+  };
+
+
+  const logout = () =>{
+    localStorage.clear();
+    // history.push("/register")
+    navigate("/register");
+    
+  }
+
+
+  useEffect(() => {
+    checkToken();
+  }, []);
+
   return (
     <nav className="nav">
       <div className="navContent">
@@ -26,19 +51,39 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="nav-btn-wrapper">
-          <Link to="/login">
-            <button className="btn nav-btn sign-in-btn">Sign in</button>
-          </Link>
-          <Link to="/register">
-            <button className="btn nav-btn">Create Account</button>
-          </Link>
-          <button
-            className="btn nav-btn menu-btn"
-            onClick={() => setShowMenu(!showMenu)}>
-            Menu
-          </button>
-        </div>
+        {tokenChecker ? (
+          <>
+            <div className="nav-btn-wrapper">
+              <Link to="/login">
+                <button className="btn nav-btn sign-in-btn">Sign In</button>
+              </Link>
+              <Link to="/register">
+                <button className="btn nav-btn">Create Account</button>
+              </Link>
+              <button
+                className="btn nav-btn menu-btn"
+                onClick={() => setShowMenu(!showMenu)}
+              >
+                Menu
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="nav-btn-wrapper">
+              <button className="btn nav-btn sign-in-btn" onClick={logout}>
+                Sign Out
+              </button>
+
+              <button
+                className="btn nav-btn menu-btn"
+                onClick={() => setShowMenu(!showMenu)}
+              >
+                Menu
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </nav>
   );
