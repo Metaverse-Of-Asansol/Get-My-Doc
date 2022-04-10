@@ -1,0 +1,21 @@
+.all_doc_details{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 12px 12px 15px rgb(220, 220, 220) ;
+}
+.doc_img{
+    height: 400px;
+    max-width: 50%;
+}
+.doc_img img{
+    height: 100%;
+    width: 100%;
+}
+.doc_details{
+    min-width: 40%;
+    max-width: 50%;
+}
