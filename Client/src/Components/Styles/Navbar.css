@@ -1,11 +1,11 @@
 .nav{
     width:100%;
-    padding:1.4rem 0;
+    padding:1rem 0;
     position: relative;
     z-index: 10;
     backdrop-filter: blur(5px);
     background-color: rgb(255, 255, 255, 0.1);
-    box-shadow: 10px 10px 15px rgb(255, 255, 255, 0.1);
+    box-shadow: 10px 10px 15px rgba(24, 20, 20, 0.164);
 }
 .navContent{
     width: 100%;
@@ -39,14 +39,22 @@
     color: black;
 }
 .nav-link-items{
-    font-weight: 600;
+    font-size:1rem;
+    font-weight: 900;
     color: black;
 }
 .nav-btn{
-    background-color: rgb(71, 214, 214);
+    padding: 0.7rem 1rem;
+    background-color: #735cdd;
+    border-radius: 0.45rem;
+    cursor: pointer;
+    border: none;
+    transition: 500ms;
+    font-size: 1rem;
+    color: #ffff;
     font-weight: 600;
-    color: black;
     margin-right: 1.7rem ;
+    font-family: 'Poppins', sans-serif;
 }
 .menu-btn{
     display: none;

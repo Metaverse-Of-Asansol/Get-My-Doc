@@ -4,12 +4,15 @@
     margin: 0 auto;
 }
 .tags_wrapper_div{
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(5, 1fr);
     place-items: center;
-    /* flex-direction: row; */
+    flex-wrap: wrap;
+    flex-direction: row;
     max-width: 100%;
     border: 1px;
+    /* align-items: center; */
+    justify-content: center;
 }
 .create_btn_wrapper{
     width: 100%;

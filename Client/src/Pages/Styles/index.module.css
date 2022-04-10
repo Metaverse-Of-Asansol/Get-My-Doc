@@ -1,13 +1,13 @@
 :root {
-    --primary: #9d174d;
+    --primary: #735cdd;
   }
   .member_section {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    background-color: rgb(188, 188, 188);
+    background-color: rgb(255, 255, 255);
   }
   
   .card {
@@ -20,6 +20,7 @@
     width: 260px;
     height: 275px;
     transition: all 0.5s;
+    box-shadow: 5px 5px 15px 7px rgb(216, 216, 216);
   }
   .card::before {
     content: "";

@@ -48,14 +48,14 @@ const Alldocuments = () => {
     <main className="main_section AllDocs_main">
       <div className="All_doc_head">
         <h1>All Document Related To {tag}</h1>
-        Here all the documents of specific tag will be displayed
+        Here All The Documents Of Specific Tag Will Be Displayed
       </div>
 
         {console.log(docs)}
         <div className="tags_wrapper_div">
         {docs.map((doc, index) => {
           return (
-            <Link key={index} to={`/doc/${doc._id}`}>
+            <Link style={{textDecoration : "none"}} key={index} to={`/doc/${doc._id}`}>
                 {/* <span>
                   <h4>{doc.docTitle}</h4> <code>{doc.docTags}</code>
                 </span> */}
@@ -65,7 +65,7 @@ const Alldocuments = () => {
         })}
         </div>
         <form>
-          <Link to={`/docs/${tag}/createDocument`}>
+          <Link style={{textDecoration : "none"}} to={`/docs/${tag}/createDocument`}>
             <button className="btn C_doc_btn">Create Document</button>
           </Link>
         </form>
