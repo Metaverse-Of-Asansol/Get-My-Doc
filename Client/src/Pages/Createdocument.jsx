@@ -68,17 +68,26 @@ const Createdocument = () => {
     let pathName = loation.pathname;
     let pathArray = pathName.split("/");
     let resultantstring = pathArray[2].replaceAll("%20", " ");
+
+    if (!selectedFile) return;
+    const reader = new FileReader();
+    reader.readAsDataURL(selectedFile);
+
     const userData = {
       docId: registerdata.docId,
       docTitle: registerdata.docTitle,
       docTags: resultantstring,
       additionalInfo: registerdata.additionalInfo,
+      docLink : reader.result
     };
+
     const authToken = localStorage.getItem("token");
+
     const { data } = await axios.post("/api/v1/addDocument", userData, {
       withCredentials: true,
       headers: { Authorization: `Bearer ${authToken}` },
     });
+    
     console.log(data);
     if (data.success) {
       console.log("User document added successfully : ", data);
