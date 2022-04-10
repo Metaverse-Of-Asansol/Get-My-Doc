@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const { register, login } = require("../controllers/auth")
-const { documents, addTag, getalltags, getdocs } = require("../controllers/document")
+const { documents, addTag, getalltags, getdocs, getdocument } = require("../controllers/document")
 const { isAuthenticated } = require("../middlewares/isAuthenticates")
 router.post(
   "/register",
@@ -19,6 +19,7 @@ router.post("/addDocument", isAuthenticated, documents);
 router.post("/addtag", isAuthenticated, addTag);
 router.get("/getalltags", isAuthenticated, getalltags);
 router.get("/getdocs/:tags", isAuthenticated, getdocs);
+router.get("/getdocument/:tags", isAuthenticated, getdocument);
 
 
 module.exports = router;

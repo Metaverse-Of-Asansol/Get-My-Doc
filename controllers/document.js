@@ -115,3 +115,24 @@ exports.getdocs = async (req, res) => {
         });
     }
 };
+exports.getdocument = async (req, res) => {
+    try {
+
+        const tag = req.params.tags;
+        const docs = await Docs.findOne({ _id: tag });
+        if (!docs) {
+            return res.json({ success: false, message: "Docs Does Not Exist" })
+        }
+        res.json({
+            success: true,
+            docs: docs,
+            message: "Documents Sent",
+        });
+    } catch (error) {
+        return res.json({
+            success: false,
+            error: error.message,
+            message: "Documents Cannot Be Sent",
+        });
+    }
+};
