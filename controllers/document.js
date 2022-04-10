@@ -4,8 +4,8 @@ const cloudinary = require("../config/cloudinary")
 exports.documents = async (req, res) => {
     try {
         const { docId, docTitle, docTags, additionalInfo } = req.body;
-        const fileStr = req.body.data;
-
+        const fileStr = req.body.docLink;
+        console.log(fileStr);
         if (!docTitle || !docTags) {
             return res.json({ success: false, message: "All fields are required" });
         }

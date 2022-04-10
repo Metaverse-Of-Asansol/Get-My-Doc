@@ -72,7 +72,10 @@ const Createdocument = () => {
     if (!selectedFile) return;
     const reader = new FileReader();
     reader.readAsDataURL(selectedFile);
-
+    console.log(selectedFile);
+    console.log("__________________________----------------------------------------");
+    console.log(reader.result);
+    console.log(reader);
     const userData = {
       docId: registerdata.docId,
       docTitle: registerdata.docTitle,
