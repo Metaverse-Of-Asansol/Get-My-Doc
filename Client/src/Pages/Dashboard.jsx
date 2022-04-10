@@ -47,6 +47,10 @@ const Dashboard = () => {
         <Link to="/createtag">
           <button className="btn">Create A New Tag</button>
         </Link>
+        
+        <Link to="/docs/createdoc">
+          <button className="btn">Create A Document</button>
+        </Link>
       </Base>
     </>
   );

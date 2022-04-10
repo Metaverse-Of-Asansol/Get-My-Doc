@@ -9,6 +9,7 @@ import Dashboard from "./Pages/Dashboard";
 import Creaetag from "./Pages/Creaetag";
 import Alldocuments from "./Pages/Alldocuments";
 import Createdocument from "./Pages/Createdocument";
+import Createdoc from "./Pages/Createdoc";
 const Routers = () => {
   return (
     <>
@@ -33,8 +34,7 @@ const Routers = () => {
         <Route path="/docs/:tagname/createDocument" element={<Createdocument/>} />
 
         {/* Form for creating new document directly from Dashboard */}
-        {/* <Route path="/docs/createDocument" element={<Createdoc/>} /> */}
-        <Route path="/docs/createDocument" element={<Createdocument/>} />
+        <Route path="/docs/createdoc" element={<Createdoc/>} />
       </Routes>
     </>
   );
