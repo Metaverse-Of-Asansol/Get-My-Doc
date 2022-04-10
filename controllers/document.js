@@ -82,3 +82,29 @@ exports.getalltags = async (req, res) => {
         });
     }
 };
+
+exports.getdocs = async (req, res) => {
+    try {
+
+        const tag = req.params.tags;
+        const user = await User.findOne({ email: req.user.email });
+        var docsarr = [];
+        for (let i = 0; i < user.documents.length; i++) {
+            const docs = await Docs.findOne({ _id: user.documents[i] });
+            if (docs.docTags === tag) {
+                docsarr.push(docs);
+            }
+        }
+        res.json({
+            success: true,
+            docs: docsarr,
+            message: "Documents With Selected Tag Sent",
+        });
+    } catch (error) {
+        return res.json({
+            success: false,
+            error: error.message,
+            message: "Documents Cannot Be Sent",
+        });
+    }
+};
