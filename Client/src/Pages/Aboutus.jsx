@@ -16,7 +16,7 @@ const Aboutus = () => {
     },
     {
       id: 2,
-      name: "Saikat Mukherjee",
+      name: "SK Mukherjee",
       profession: "Backend Developer",
       github_url: "https://github.com/saikatmu31",
       linkedin_url: "https://www.linkedin.com/in/saikat-mukherjee-2a925b1b7",
@@ -25,7 +25,7 @@ const Aboutus = () => {
     {
       id: 3,
       name: "Aritra Biswas",
-      profession: "UI and Frontend Developer",
+      profession: "Frontend Developer",
       github_url: "https://github.com/Aritra777",
       linkedin_url: "https://www.linkedin.com/in/aritra-biswas-13718b228/",
       twitter_url: "https://github.com/Dezenix/frontend-reactjs",
