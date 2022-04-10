@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "client": "cd Client && npm run dev",
-    "start": "concurrently \"npm run dev\" \" npm run client\""
+    "devify": "concurrently \"npm run dev\" \" npm run client\"",
+    "start":"node index.js"
   },
   "keywords": [
     "mern",
