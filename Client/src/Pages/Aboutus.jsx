@@ -2,40 +2,40 @@ import React from "react";
 import Base from "../Base";
 import styles from "./Styles/index.module.css"
 import { Link } from "react-router-dom";
-import {FaLinkedin, FaTwitterSquare, FaGithubSquare} from "react-icons/fa"
+import { FaLinkedin, FaTwitterSquare, FaGithubSquare } from "react-icons/fa"
 
 const Aboutus = () => {
   const members = [
     {
       id: 1,
-      name: "John Doe",
-      profession: "Founder & co-founder",
-      github_url: "https://github.com/Dezenix/frontend-reactjs",
-      linkedin_url: "https://github.com/Dezenix/frontend-reactjs",
+      name: "Abir Pal",
+      profession: "Full Stack Web Developer",
+      github_url: "https://github.com/Abirpal202049",
+      linkedin_url: "https://www.linkedin.com/in/abir-pal/",
       twitter_url: "https://github.com/Dezenix/frontend-reactjs",
     },
     {
       id: 2,
-      name: "Mario",
-      profession: "CEO & co-founder",
-      github_url: "https://github.com/Dezenix/frontend-reactjs",
-      linkedin_url: "https://github.com/Dezenix/frontend-reactjs",
+      name: "Saikat Mukherjee",
+      profession: "Backend Developer",
+      github_url: "https://github.com/saikatmu31",
+      linkedin_url: "https://www.linkedin.com/in/saikat-mukherjee-2a925b1b7",
       twitter_url: "https://github.com/Dezenix/frontend-reactjs",
     },
     {
       id: 3,
-      name: "Johnson",
-      profession: "Software Developer",
-      github_url: "https://github.com/Dezenix/frontend-reactjs",
-      linkedin_url: "https://github.com/Dezenix/frontend-reactjs",
+      name: "Aritra Biswas",
+      profession: "UI and Frontend Developer",
+      github_url: "https://github.com/Aritra777",
+      linkedin_url: "https://www.linkedin.com/in/aritra-biswas-13718b228/",
       twitter_url: "https://github.com/Dezenix/frontend-reactjs",
     },
     {
       id: 4,
-      name: "Dan",
-      profession: "Marketing Head",
-      github_url: "https://github.com/Dezenix/frontend-reactjs",
-      linkedin_url: "https://github.com/Dezenix/frontend-reactjs",
+      name: "Souvik Mandal",
+      profession: "Backend Developer",
+      github_url: "https://github.com/8-bit-souvik",
+      linkedin_url: "https://www.linkedin.com/in/8bitsouvik/",
       twitter_url: "https://github.com/Dezenix/frontend-reactjs",
     },
   ];
