@@ -33,7 +33,7 @@ app.get("/api", function (req, res) {
   }
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(4000, () => {
+const PORT =  4000;
+app.listen(PORT, () => {
   console.log(`App connected to the server at Port ${PORT}`);
 });
