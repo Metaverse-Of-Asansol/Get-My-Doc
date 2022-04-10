@@ -42,7 +42,7 @@ exports.addTag = async (req, res) => {
         const user = await User.findOne({ email: req.user.email });
         console.log(user);
         if (user.tags.includes(tag)) {
-            return res.status(400).json({
+            return res.json({
                 success: false,
                 token: true,
                 message: "This Tag is Already Present Try a Different Name",

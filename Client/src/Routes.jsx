@@ -6,6 +6,7 @@ import Aboutus from "./Pages/Aboutus";
 import Register from "./Pages/Register";
 import SignIn from "./Pages/SignIn";
 import Dashboard from "./Pages/Dashboard";
+import Creaetag from "./Pages/Creaetag";
 const Routers = () => {
   return (
     <>
@@ -15,7 +16,9 @@ const Routers = () => {
         <Route path="/features" element={<Features/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<SignIn/>} />
+        {/* Secure Routes */}
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/createtag" element={<Creaetag/>} />
       </Routes>
     </>
   );

@@ -1,9 +1,21 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Base from "../Base";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 const Dashboard = () => {
+  const [tags, setTags] = useState([]);
   let navigate = useNavigate();
+
+  const getAllTags = async () => {
+    const authToken = localStorage.getItem("token");
+    const { data } = await axios.get("/api/v1/getalltags", {
+      withCredentials: true,
+      headers: { Authorization: `Bearer ${authToken}` },
+    });
+    console.log("All Tags : ", { data });
+    setTags(data.tags);
+  };
 
   async function tokenCheker() {
     const authToken = localStorage.getItem("token");
@@ -13,13 +25,26 @@ const Dashboard = () => {
   }
 
   useEffect(() => {
-    tokenCheker()
-  }, [])
+    tokenCheker();
+    getAllTags();
+  }, []);
 
   return (
     <>
       <Base>
+        {console.log(tags)}
         <h1>Dashboard</h1>
+        {tags.map((tag, index) => {
+          return (
+            <div key={index}>
+              <h4>{tag}</h4>
+            </div>
+          );
+        })}
+
+        <Link to="/createtag">
+          <button className="btn">Create A New Tag</button>
+        </Link>
       </Base>
     </>
   );
