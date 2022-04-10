@@ -25,10 +25,13 @@ const Alldocuments = () => {
 
     console.log("Fetch Data");
     const authToken = localStorage.getItem("token");
-    const { data } = await axios.get(`/api/v1/getdocs/${pathArray[2].replaceAll("%20", " ")}`, {
-      withCredentials: true,
-      headers: { Authorization: `Bearer ${authToken}` },
-    });
+    const { data } = await axios.get(
+      `/api/v1/getdocs/${pathArray[2].replaceAll("%20", " ")}`,
+      {
+        withCredentials: true,
+        headers: { Authorization: `Bearer ${authToken}` },
+      }
+    );
     setDocs(data.docs);
     console.log("Doc Data : ", data);
   }
@@ -40,19 +43,21 @@ const Alldocuments = () => {
 
   return (
     <Base>
-    <main className="main_section AllDocs_main">
+      <main className="main_section AllDocs_main">
         <h1>All Document Related To {tag}</h1>
         Here all the documents of specific tag will be displayed
-
         {console.log(docs)}
         {docs.map((doc, index) => {
-          return(
-            <div key={index}>
-              <span><h4>{doc.docTitle}</h4> <code>{doc.docTags}</code></span>
-            </div>
-          )
+          return (
+            <Link key={index} to={`/doc/${doc._id}`}>
+              <div>
+                <span>
+                  <h4>{doc.docTitle}</h4> <code>{doc.docTags}</code>
+                </span>
+              </div>
+            </Link>
+          );
         })}
-
         <form>
           <Link to={`/docs/${tag}/createDocument`}>
             <button className="btn">Create Document</button>
