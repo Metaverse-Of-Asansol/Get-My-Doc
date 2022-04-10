@@ -3,7 +3,7 @@ const User = require("../models/user");
 
 exports.documents = async (req, res) => {
     try {
-        const { docId, docTitle, category, docTags, additionalInfo } = req.body;
+        const { docId, docTitle, docTags, additionalInfo } = req.body;
 
         if (!docTitle || !docTags) {
             return res.json({ success: false, message: "All fields are required" });
@@ -12,8 +12,7 @@ exports.documents = async (req, res) => {
             docId,
             docTitle,
             docTags,
-            additionalInfo,
-            category,
+            additionalInfo
         });
         // const user = await User.findOne({ email: req.user.email })
         const updateuser = await User.updateOne(

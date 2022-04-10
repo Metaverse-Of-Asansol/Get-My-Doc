@@ -15,7 +15,7 @@ router.post(
   register
 );
 router.post("/login", [check("email", "E-Mail is Required").isEmail()], login);
-router.get("/addDocument", isAuthenticated, documents);
+router.post("/addDocument", isAuthenticated, documents);
 router.post("/addtag", isAuthenticated, addTag);
 router.get("/getalltags", isAuthenticated, getalltags);
 

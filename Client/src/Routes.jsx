@@ -20,8 +20,10 @@ const Routers = () => {
         <Route path="/login" element={<SignIn/>} />
         {/* Secure Routes */}
         <Route path="/dashboard" element={<Dashboard/>} />
+
         <Route path="/createtag" element={<Creaetag/>} />
         <Route path="/tagblock/:tagname" element={<Alldocuments/>} />
+        
         <Route path="/docs/:tagname/createDocument" element={<Createdocument/>} />
       </Routes>
     </>

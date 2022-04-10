@@ -19,7 +19,7 @@ const Alldocuments = () => {
     let pathName = loation.pathname;
     let pathArray = pathName.split("/");
     console.log(pathArray);
-    setTitle(pathArray[2].replace("%20", " "));
+    setTitle(pathArray[2].replaceAll("%20", " "));
     tokenCheker();
   }, []);
 
