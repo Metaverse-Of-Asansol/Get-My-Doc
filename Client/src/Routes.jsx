@@ -10,6 +10,7 @@ import Creaetag from "./Pages/Creaetag";
 import Alldocuments from "./Pages/Alldocuments";
 import Createdocument from "./Pages/Createdocument";
 import Createdoc from "./Pages/Createdoc";
+import Viewdata from "./Pages/Viewdata";
 const Routers = () => {
   return (
     <>
@@ -35,6 +36,9 @@ const Routers = () => {
 
         {/* Form for creating new document directly from Dashboard */}
         <Route path="/docs/createdoc" element={<Createdoc/>} />
+
+        {/* Data View in enlarge Mode */}
+        <Route path="/doc/:id" element={<Viewdata/>} />
       </Routes>
     </>
   );
