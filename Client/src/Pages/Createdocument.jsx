@@ -4,6 +4,25 @@ import axios from "axios";
 import Base from "../Base";
 
 const Createdocument = () => {
+  const [fileInputState, setFileInputState] = useState("");
+  const [previewSource, setPreviewSource] = useState("");
+  const [selectedFile, setSelectedFile] = useState();
+
+  const handleFileInputChange = (e) => {
+    const file = e.target.files[0];
+    previewFile(file); //f1
+    setSelectedFile(file);
+    setFileInputState(e.target.value);
+  };
+
+  const previewFile = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setPreviewSource(reader.result);
+    };
+  };
+
   const [tags, setTags] = useState([]);
   let loation = useLocation();
   const [registerdata, setRegisterdata] = useState({
@@ -136,10 +155,23 @@ const Createdocument = () => {
             placeholder="Additional Information"
           />
         </div>
+        <div>
+          <input
+            id="fileInput"
+            type="file"
+            name="image"
+            onChange={handleFileInputChange}
+            value={fileInputState}
+            className="form-input"
+          />
+        </div>
         <button className="btn" type="submit">
           Create Document
         </button>
       </form>
+      {previewSource && (
+        <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
+      )}
     </Base>
   );
 };
