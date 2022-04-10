@@ -11,7 +11,7 @@
   /* Colors */
   --clr-main: #3b80f5;
   --clr-secondary: #735cde;
-  --clr-btn-bg: rgb(71, 214, 214);
+  --clr-btn-bg: #735cdd;
   --clr-logo: #4c217e;
   /* Font sizes */
   --max-font: 1rem;
@@ -42,4 +42,5 @@ body {
   border: none;
   transition: 500ms;
   font-size: 1rem;
+  color: #ffff;
 }
