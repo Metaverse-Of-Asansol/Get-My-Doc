@@ -18,13 +18,23 @@ const Routers = () => {
         <Route path="/features" element={<Features/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<SignIn/>} />
-        {/* Secure Routes */}
+        {/*  Secure Routes */}
+
+        {/* Dashboard for displaying all Tags Available */}
         <Route path="/dashboard" element={<Dashboard/>} />
 
+        {/* Form for creating tag */}
         <Route path="/createtag" element={<Creaetag/>} />
+
+        {/* List down all the document related to a perticulat tag */}
         <Route path="/tagblock/:tagname" element={<Alldocuments/>} />
         
+        {/* Form for creating new documents related to specific tag*/}
         <Route path="/docs/:tagname/createDocument" element={<Createdocument/>} />
+
+        {/* Form for creating new document directly from Dashboard */}
+        {/* <Route path="/docs/createDocument" element={<Createdoc/>} /> */}
+        <Route path="/docs/createDocument" element={<Createdocument/>} />
       </Routes>
     </>
   );

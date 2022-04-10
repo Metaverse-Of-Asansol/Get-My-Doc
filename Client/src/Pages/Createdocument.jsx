@@ -60,18 +60,17 @@ const Createdocument = () => {
       headers: { Authorization: `Bearer ${authToken}` },
     });
     console.log(data);
-    // if (data.success) {
-    //   console.log("User document added successfully : ", data);
-    //   navigate("/dashboard");
-    // } else {
-    //   console.log("Something went Wrong :", data);
-    //   setRegisterdata({
-    //     docId: "",
-    //     docTitle: "",
-    //     docTag: "",
-    //     additionalInfo: "",
-    //   });
-    // }
+    if (data.success) {
+      console.log("User document added successfully : ", data);
+      navigate(`/tagblock/${resultantstring}`);
+    } else {
+      console.log("Something went Wrong :", data);
+      setRegisterdata({
+        docId: "",
+        docTitle: "",
+        additionalInfo: "",
+      });
+    }
   }
 
   useEffect(() => {
