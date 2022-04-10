@@ -62,48 +62,97 @@ const Createdocument = () => {
   }
 
   // TODO: Upcoming File Uploder Function
-  async function submit(e) {
-    e.preventDefault();
-    console.log("User Data Submitted");
-    let pathName = loation.pathname;
-    let pathArray = pathName.split("/");
-    let resultantstring = pathArray[2].replaceAll("%20", " ");
 
+  const handleSubmitFile = (e) => {
+    e.preventDefault();
     if (!selectedFile) return;
     const reader = new FileReader();
     reader.readAsDataURL(selectedFile);
-    console.log(selectedFile);
-    console.log("__________________________----------------------------------------");
-    console.log(reader.result);
-    console.log(reader);
-    const userData = {
-      docId: registerdata.docId,
-      docTitle: registerdata.docTitle,
-      docTags: resultantstring,
-      additionalInfo: registerdata.additionalInfo,
-      docLink : reader.result
+    reader.onloadend = () => {
+      uploadImage(reader.result);
     };
+    reader.onerror = () => {
+      console.error("AHHHHHHHH!!");
+      setErrMsg("something went wrong!");
+    };
+  };
 
-    const authToken = localStorage.getItem("token");
+  const uploadImage = async (base64EncodedImage) => {
+    try {
+      const userData = {
+        docId: registerdata.docId,
+        docTitle: registerdata.docTitle,
+        docTags: resultantstring,
+        additionalInfo: registerdata.additionalInfo,
+        docLink: JSON.stringify(base64EncodedImage),
+      };
 
-    const { data } = await axios.post("/api/v1/addDocument", userData, {
-      withCredentials: true,
-      headers: { Authorization: `Bearer ${authToken}` },
-    });
-    
-    console.log(data);
-    if (data.success) {
-      console.log("User document added successfully : ", data);
-      navigate(`/tagblock/${resultantstring}`);
-    } else {
-      console.log("Something went Wrong :", data);
-      setRegisterdata({
-        docId: "",
-        docTitle: "",
-        additionalInfo: "",
+      const authToken = localStorage.getItem("token");
+      const  data  = await axios.post("/api/v1/addDocument", userData, {
+        withCredentials: true,
+        headers: { Authorization: `Bearer ${authToken}` },
       });
+
+      console.log("DATA------->", data);
+
+      // await fetch("/api/upload", {
+      //   method: "POST",
+      //   body: JSON.stringify({ data: base64EncodedImage }),
+      //   headers: { "Content-Type": "application/json" },
+      // });
+      setFileInputState("");
+      setPreviewSource("");
+      setSuccessMsg("Image uploaded successfully");
+    } catch (err) {
+      console.error(err);
+      setErrMsg("Something went wrong!");
     }
-  }
+  };
+
+  // async function submit(e) {
+  //   e.preventDefault();
+  //   console.log("User Data Submitted");
+  //   let pathName = loation.pathname;
+  //   let pathArray = pathName.split("/");
+  //   let resultantstring = pathArray[2].replaceAll("%20", " ");
+
+  //   if (!selectedFile) return;
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(selectedFile);
+  //   console.log(selectedFile);
+  //   console.log(
+  //     "__________________________----------------------------------------"
+  //   );
+  //   console.log(reader.result);
+  //   console.log(reader);
+  //   const userData = {
+  //     docId: registerdata.docId,
+  //     docTitle: registerdata.docTitle,
+  //     docTags: resultantstring,
+  //     additionalInfo: registerdata.additionalInfo,
+  //     docLink: reader.result,
+  //   };
+
+  //   const authToken = localStorage.getItem("token");
+
+  //   const { data } = await axios.post("/api/v1/addDocument", userData, {
+  //     withCredentials: true,
+  //     headers: { Authorization: `Bearer ${authToken}` },
+  //   });
+
+  //   console.log(data);
+  //   if (data.success) {
+  //     console.log("User document added successfully : ", data);
+  //     navigate(`/tagblock/${resultantstring}`);
+  //   } else {
+  //     console.log("Something went Wrong :", data);
+  //     setRegisterdata({
+  //       docId: "",
+  //       docTitle: "",
+  //       additionalInfo: "",
+  //     });
+  //   }
+  // }
 
   useEffect(() => {
     console.log("Path Arrray", resultantstring);
@@ -115,7 +164,7 @@ const Createdocument = () => {
     <Base>
       <h1>Create New Document For {resultantstring}</h1>
       Page for creating new document based on specifis TAG
-      <form onSubmit={(e) => submit(e)}>
+      <form onSubmit={handleSubmitFile}>
         <div>
           <input
             type="text"
