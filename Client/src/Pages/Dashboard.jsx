@@ -37,7 +37,9 @@ const Dashboard = () => {
         {tags.map((tag, index) => {
           return (
             <div key={index}>
-              <h4>{tag}</h4>
+              <Link to={`/tagblock/${tag}`}>
+                <h4>{tag}</h4>
+              </Link>
             </div>
           );
         })}

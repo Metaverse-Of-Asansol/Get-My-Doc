@@ -1,10 +1,12 @@
-import React from 'react'
-import Base from '../Base'
+import React from "react";
+import Base from "../Base";
 
 const Aboutus = () => {
   return (
-    <Base>Features Page</Base>
-  )
-}
+    <Base>
+      <h1>Features Page</h1>
+    </Base>
+  );
+};
 
-export default Aboutus
+export default Aboutus;

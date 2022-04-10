@@ -8,9 +8,9 @@ const Base = ({children}) => {
         <div>
             {children}
         </div>
-        <footer>
+        {/* <footer>
           This is the footer component
-        </footer>
+        </footer> */}
     </>
   )
 }
