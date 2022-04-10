@@ -44,7 +44,7 @@ const Register = () => {
       console.log("User register successfully : ", data);
       localStorage.setItem("token", data.token);
       localStorage.setItem("userName", data.user.name);
-      navigate("/");
+      navigate("/dashboard");
     } else {
       console.log("Something went Wrong :", data);
       setRegisterdata({

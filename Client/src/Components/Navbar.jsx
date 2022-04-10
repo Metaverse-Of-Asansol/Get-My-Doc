@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Styles/Navbar.css";
 
 export default function Navbar() {
@@ -16,17 +16,14 @@ export default function Navbar() {
     console.log("Hi");
   };
 
-
-  const logout = () =>{
+  const logout = () => {
     localStorage.clear();
     navigate("/register");
-    
-  }
-
+  };
 
   useEffect(() => {
     checkToken();
-  }, [tokenChecker, ]);
+  }, [tokenChecker]);
 
   return (
     <nav className="nav">
@@ -48,6 +45,15 @@ export default function Navbar() {
             <li className="nav-link-items">
               <Link to="/features">Features</Link>
             </li>
+            {!tokenChecker ? (
+              <>
+                <li className="nav-link-items">
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+              </>
+            ) : (
+              <></>
+            )}
           </ul>
         </div>
         {tokenChecker ? (
