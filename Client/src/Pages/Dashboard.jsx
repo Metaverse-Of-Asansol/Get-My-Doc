@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Tags_boxes from "../Components/Tags_boxes";
 import "./Styles/Dashboard.css"
+import folder from "../../assets/folder1.png"
 
 const Dashboard = () => {
   const [tags, setTags] = useState([]);
@@ -41,7 +42,7 @@ const Dashboard = () => {
         {tags.map((tag, index) => {
           return (
               <Link style={{textDecoration : "none"}} to={`/tagblock/${tag}`}>
-                <Tags_boxes tagName={tag}/>
+                <Tags_boxes tagName={tag} tagImg={folder}/>
               </Link>
           );
         })}

@@ -1,14 +1,13 @@
 import React, {useState, useEffect} from "react";
-import folder from "../../assets/folder1.png"
 import "./Styles/Tags_boxes.css";
 
-const Tags_boxes = ({tagName}) => {
+const Tags_boxes = ({tagName, tagImg}) => {
     
     return(
         <>
             <div className="tag_box">
                 <div className="icon">
-                    <img src={folder} alt="image" />
+                    <img src={tagImg} alt="image" />
                 </div>
                 <p className="tag_name">
                     {tagName}

@@ -3,6 +3,8 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import Base from "../Base";
 import axios from "axios";
 import "./Styles/Alldocuments.css";
+import Tags_boxes from "../Components/Tags_boxes";
+import file from "../../assets/—Pngtree—file icon_4419863.png.png";
 
 const Alldocuments = () => {
   let navigate = useNavigate();
@@ -50,17 +52,18 @@ const Alldocuments = () => {
       </div>
 
         {console.log(docs)}
+        <div className="tags_wrapper_div">
         {docs.map((doc, index) => {
           return (
             <Link key={index} to={`/doc/${doc._id}`}>
-              <div>
-                <span>
+                {/* <span>
                   <h4>{doc.docTitle}</h4> <code>{doc.docTags}</code>
-                </span>
-              </div>
+                </span> */}
+                <Tags_boxes tagName={doc.docTitle} tagImg={file}/>
             </Link>
           );
         })}
+        </div>
         <form>
           <Link to={`/docs/${tag}/createDocument`}>
             <button className="btn C_doc_btn">Create Document</button>
