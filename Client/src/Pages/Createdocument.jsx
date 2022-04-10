@@ -84,8 +84,9 @@ const Createdocument = () => {
         docTitle: registerdata.docTitle,
         docTags: resultantstring,
         additionalInfo: registerdata.additionalInfo,
-        docLink: JSON.stringify(base64EncodedImage),
+        docLink: base64EncodedImage,
       };
+      console.log(userData);
 
       const authToken = localStorage.getItem("token");
       const  data  = await axios.post("/api/v1/addDocument", userData, {
@@ -102,10 +103,10 @@ const Createdocument = () => {
       // });
       setFileInputState("");
       setPreviewSource("");
-      setSuccessMsg("Image uploaded successfully");
+      // setSuccessMsg("Image uploaded successfully");
     } catch (err) {
       console.error(err);
-      setErrMsg("Something went wrong!");
+      // setErrMsg("Something went wrong!");
     }
   };
 

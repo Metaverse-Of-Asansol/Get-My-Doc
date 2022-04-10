@@ -13,6 +13,7 @@ exports.documents = async (req, res) => {
             folder: 'getMyDocs',
         });
         console.log(uploadResponse);
+        console.log("*/*/*/*/*/*/*/*/*/*/*/*/*/*/**/*/**////*/*/*/*//");
         const docs = await Docs.create({
             docId,
             docTitle,
