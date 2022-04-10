@@ -19,7 +19,7 @@ exports.documents = async (req, res) => {
             docTitle,
             docTags,
             additionalInfo,
-            docLink: uploadResponse
+            docLink: uploadResponse.url
         });
         // const user = await User.findOne({ email: req.user.email })
         const updateuser = await User.updateOne(

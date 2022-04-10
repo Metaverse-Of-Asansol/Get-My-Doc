@@ -89,71 +89,29 @@ const Createdocument = () => {
       console.log(userData);
 
       const authToken = localStorage.getItem("token");
-      const  data  = await axios.post("/api/v1/addDocument", userData, {
+      const { data } = await axios.post("/api/v1/addDocument", userData, {
         withCredentials: true,
         headers: { Authorization: `Bearer ${authToken}` },
       });
 
-      console.log("DATA------->", data);
-
-      // await fetch("/api/upload", {
-      //   method: "POST",
-      //   body: JSON.stringify({ data: base64EncodedImage }),
-      //   headers: { "Content-Type": "application/json" },
-      // });
-      setFileInputState("");
-      setPreviewSource("");
-      // setSuccessMsg("Image uploaded successfully");
+      if (data.success) {
+        console.log("DATA------->", { data });
+        navigate(`/tagblock/${resultantstring}`)
+      }else{
+        console.log("DATA------->", { data });
+        setFileInputState("");
+        setPreviewSource("");
+        setRegisterdata({
+          docId: "",
+          docTitle: "",
+          docTag: "",
+          additionalInfo: ""
+        });
+      }
     } catch (err) {
       console.error(err);
-      // setErrMsg("Something went wrong!");
     }
   };
-
-  // async function submit(e) {
-  //   e.preventDefault();
-  //   console.log("User Data Submitted");
-  //   let pathName = loation.pathname;
-  //   let pathArray = pathName.split("/");
-  //   let resultantstring = pathArray[2].replaceAll("%20", " ");
-
-  //   if (!selectedFile) return;
-  //   const reader = new FileReader();
-  //   reader.readAsDataURL(selectedFile);
-  //   console.log(selectedFile);
-  //   console.log(
-  //     "__________________________----------------------------------------"
-  //   );
-  //   console.log(reader.result);
-  //   console.log(reader);
-  //   const userData = {
-  //     docId: registerdata.docId,
-  //     docTitle: registerdata.docTitle,
-  //     docTags: resultantstring,
-  //     additionalInfo: registerdata.additionalInfo,
-  //     docLink: reader.result,
-  //   };
-
-  //   const authToken = localStorage.getItem("token");
-
-  //   const { data } = await axios.post("/api/v1/addDocument", userData, {
-  //     withCredentials: true,
-  //     headers: { Authorization: `Bearer ${authToken}` },
-  //   });
-
-  //   console.log(data);
-  //   if (data.success) {
-  //     console.log("User document added successfully : ", data);
-  //     navigate(`/tagblock/${resultantstring}`);
-  //   } else {
-  //     console.log("Something went Wrong :", data);
-  //     setRegisterdata({
-  //       docId: "",
-  //       docTitle: "",
-  //       additionalInfo: "",
-  //     });
-  //   }
-  // }
 
   useEffect(() => {
     console.log("Path Arrray", resultantstring);
@@ -187,26 +145,6 @@ const Createdocument = () => {
             placeholder="Document Title"
           />
         </div>
-
-        {/* <div>
-          <select
-            name="docTag"
-            id="docTag"
-            value={registerdata.docTag}
-            onChange={(e) => handelChange(e)}
-          >
-            <option selected hidden>
-              Choose your branch
-            </option>
-            {tags.map((tag, index) => {
-              return (
-                <option key={index} value={tag}>
-                  {tag}
-                </option>
-              );
-            })}
-          </select>
-        </div> */}
 
         <div>
           <input
