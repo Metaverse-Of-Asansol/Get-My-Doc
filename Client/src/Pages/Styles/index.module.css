@@ -1,7 +1,7 @@
 :root {
     --primary: #9d174d;
   }
-  section {
+  .member_section {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -37,14 +37,14 @@
     position: relative;
     z-index: 10;
   }
-  section .card .image {
+  .member_section .card .image {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     padding: 3px;
     background-color: var(--primary);
   }
-  section .card img {
+  .member_section .card img {
     height: 100%;
     width: 100%;
     object-fit: cover;

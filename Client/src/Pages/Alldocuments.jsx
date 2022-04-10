@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import Base from "../Base";
 import axios from "axios";
+import "./Styles/Alldocuments.css";
 
 const Alldocuments = () => {
   let navigate = useNavigate();
@@ -39,24 +40,25 @@ const Alldocuments = () => {
 
   return (
     <Base>
-      <h1>All Document Related To {tag}</h1>
-      Here all the documents of specific tag will be displayed
+    <main className="main_section AllDocs_main">
+        <h1>All Document Related To {tag}</h1>
+        Here all the documents of specific tag will be displayed
 
-      {console.log(docs)}
-      {docs.map((doc, index) => {
-        return(
-          <div key={index}>
-            <span><h4>{doc.docTitle}</h4> <code>{doc.docTags}</code></span>
-          </div>
-        )
-      })}
+        {console.log(docs)}
+        {docs.map((doc, index) => {
+          return(
+            <div key={index}>
+              <span><h4>{doc.docTitle}</h4> <code>{doc.docTags}</code></span>
+            </div>
+          )
+        })}
 
-      <form>
-        <Link to={`/docs/${tag}/createDocument`}>
-          <button className="btn">Create Document</button>
-        </Link>
-      </form>
-
+        <form>
+          <Link to={`/docs/${tag}/createDocument`}>
+            <button className="btn">Create Document</button>
+          </Link>
+        </form>
+      </main>
     </Base>
   );
 };

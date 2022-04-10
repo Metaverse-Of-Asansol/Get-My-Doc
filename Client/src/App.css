@@ -11,7 +11,7 @@
   /* Colors */
   --clr-main: #3b80f5;
   --clr-secondary: #735cde;
-  --clr-btn-bg: #ffff;
+  --clr-btn-bg: rgb(71, 214, 214);
   --clr-logo: #4c217e;
   /* Font sizes */
   --max-font: 1rem;
@@ -36,7 +36,7 @@ body {
 }
 .btn {
   padding: 0.7rem 1rem;
-  background-color: var(--clr-secondary);
+  background-color: var(--clr-btn-bg);
   border-radius: 2rem;
   cursor: pointer;
   border: none;

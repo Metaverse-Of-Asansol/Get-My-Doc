@@ -42,7 +42,7 @@ const Aboutus = () => {
 
   return (
     <Base>
-      <section>
+      <section className={styles['member_section']}>
         {members.map((member) => {
           return (
             <div className={styles.card} key={member.id}>

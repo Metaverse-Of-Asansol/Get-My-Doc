@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import Base from "../Base";
+import "./Styles/Createdocument.css";
 
 const Createdocument = () => {
   const [fileInputState, setFileInputState] = useState("");
@@ -121,9 +122,12 @@ const Createdocument = () => {
 
   return (
     <Base>
+    <main className="main_section C_docs_section">
+      {/* <div className="C_doc_head"> */}
       <h1>Create New Document For {resultantstring}</h1>
       Page for creating new document based on specifis TAG
       <form onSubmit={handleSubmitFile}>
+        <div className="input_wrapper">
         <div>
           <input
             type="text"
@@ -132,6 +136,7 @@ const Createdocument = () => {
             value={registerdata.docId}
             onChange={(e) => handelChange(e)}
             placeholder="Document Id"
+            className="C_doc_inputs"
           />
         </div>
 
@@ -143,6 +148,7 @@ const Createdocument = () => {
             value={registerdata.docTitle}
             onChange={(e) => handelChange(e)}
             placeholder="Document Title"
+            className="C_doc_inputs"
           />
         </div>
 
@@ -154,6 +160,7 @@ const Createdocument = () => {
             value={registerdata.additionalInfo}
             onChange={(e) => handelChange(e)}
             placeholder="Additional Information"
+            className="C_doc_inputs"
           />
         </div>
         <div>
@@ -166,13 +173,15 @@ const Createdocument = () => {
             className="form-input"
           />
         </div>
-        <button className="btn" type="submit">
+        </div>
+        <button className="btn C_doc_btn" type="submit">
           Create Document
         </button>
       </form>
       {previewSource && (
         <img src={previewSource} alt="chosen" style={{ height: "300px" }} />
       )}
+      </main>
     </Base>
   );
 };

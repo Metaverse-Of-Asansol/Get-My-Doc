@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Base from "../Base";
+import "./Styles/Createtag.css"
 
 const Creaetag = () => {
   const [tag, setTag] = useState("");
@@ -45,10 +46,11 @@ const Creaetag = () => {
 
   return (
     <Base>
+    <main className="main_section C_docs_section">
       <h1>Create A New Tag</h1>
       <form onSubmit={(e) => submit(e)}>
         <input
-          className="tag-input"
+          className="C_doc_inputs"
           type="text"
           name="tag"
           id="tag"
@@ -57,10 +59,11 @@ const Creaetag = () => {
           placeholder="Create a new Tag"
           required
         />
-        <button className="btn" type="submit">
+        <button className="btn C_tag_btn" type="submit">
           Create Tag
         </button>
       </form>
+      </main>
     </Base>
   );
 };

@@ -1,0 +1,27 @@
+.C_docs_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+}
+.C_doc_head{
+    text-align: center;
+}
+.C_doc_inputs{
+    width: 300px;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: .6rem 1rem;
+    margin-bottom: .6rem;
+}
+.input_wrapper{
+    width: fit-content;
+    margin: .6rem auto;
+}
+.C_doc_btn{
+    display: block;
+    margin: auto;
+}

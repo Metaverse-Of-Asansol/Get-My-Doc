@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Base from "../Base";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import Tags_boxes from "../Components/Tags_boxes";
+import "./Styles/Dashboard.css"
 
 const Dashboard = () => {
   const [tags, setTags] = useState([]);
@@ -33,24 +35,28 @@ const Dashboard = () => {
     <>
       <Base>
         {console.log(tags)}
-        <h1>Dashboard</h1>
+        <main className="main_section Dashboard_main">
+        <h1 className="dashboard_header">My Documents</h1>
+        <div className="tags_wrapper_div">
         {tags.map((tag, index) => {
           return (
-            <div key={index}>
               <Link to={`/tagblock/${tag}`}>
-                <h4>{tag}</h4>
+                <Tags_boxes tagName={tag}/>
               </Link>
-            </div>
           );
         })}
+        </div>
 
-        <Link to="/createtag">
-          <button className="btn">Create A New Tag</button>
-        </Link>
-        
-        <Link to="/docs/createdoc">
-          <button className="btn">Create A Document</button>
-        </Link>
+        <div className="create_btn_wrapper">
+          <Link to="/createtag">
+            <button className="btn create_btns">Create A New Tag</button>
+          </Link>
+          
+          <Link to="/docs/createdoc">
+            <button className="btn create_btns">Create A Document</button>
+          </Link>
+        </div>
+        </main>
       </Base>
     </>
   );

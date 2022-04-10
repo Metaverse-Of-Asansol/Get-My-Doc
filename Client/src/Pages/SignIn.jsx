@@ -95,7 +95,6 @@ const SignIn = () => {
             <div className={styles.overlay}>
               <div
                 className={`${styles["overlay-panel"]} ${styles["overlay-right"]}`}
-                style={{padding: 0}}
               >
                 <h1 className={styles.login_title}>Don't have an account?</h1>
                 <p className={styles.login_desc}>

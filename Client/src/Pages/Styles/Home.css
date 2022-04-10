@@ -8,7 +8,7 @@
     overflow: hidden;
     /* background:linear-gradient(45deg, var(--clr-main), white); */
 }
-.hero::before{
+/* .hero::before{
     content: "";
     height: 100%;
     width: 100%;
@@ -18,7 +18,7 @@
     background: linear-gradient(45deg,#3b80f5 , #735cde, #4c217e);
     border-bottom-right-radius: 100%;
     z-index: -100;
-}
+} */
 .hero-text-body{
     text-transform: uppercase;
     width: 40rem;

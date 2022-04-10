@@ -1,0 +1,27 @@
+.tag_box{
+    padding: 0.4rem;
+    margin: 1rem;
+    height: 220px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 10px 10px 15px rgb(220, 220, 220);
+    border-radius: 12px;
+}
+.tag_name{
+    text-decoration: none;
+    border: none !important;
+    color: black;
+    font-weight: bold;
+}
+.icon{
+    height: 80%;
+    width: 80%;
+}
+.icon img{
+    width: 100%;
+    height: 100%;
+}
+
