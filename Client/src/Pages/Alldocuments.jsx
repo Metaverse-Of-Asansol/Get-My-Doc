@@ -43,9 +43,12 @@ const Alldocuments = () => {
 
   return (
     <Base>
-      <main className="main_section AllDocs_main">
+    <main className="main_section AllDocs_main">
+      <div className="All_doc_head">
         <h1>All Document Related To {tag}</h1>
         Here all the documents of specific tag will be displayed
+      </div>
+
         {console.log(docs)}
         {docs.map((doc, index) => {
           return (
@@ -60,7 +63,7 @@ const Alldocuments = () => {
         })}
         <form>
           <Link to={`/docs/${tag}/createDocument`}>
-            <button className="btn">Create Document</button>
+            <button className="btn C_doc_btn">Create Document</button>
           </Link>
         </form>
       </main>

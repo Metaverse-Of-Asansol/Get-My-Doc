@@ -48,7 +48,7 @@ const Creaetag = () => {
     <Base>
     <main className="main_section C_docs_section">
       <h1>Create A New Tag</h1>
-      <form onSubmit={(e) => submit(e)}>
+      <form onSubmit={(e) => submit(e)} className="C_tag_form">
         <input
           className="C_doc_inputs"
           type="text"
