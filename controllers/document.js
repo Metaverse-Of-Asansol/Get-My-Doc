@@ -1,18 +1,24 @@
 const Docs = require("../models/document");
 const User = require("../models/user");
-
+const cloudinary = require("./config/cloudinary")
 exports.documents = async (req, res) => {
     try {
         const { docId, docTitle, docTags, additionalInfo } = req.body;
+        const fileStr = req.body.data;
 
         if (!docTitle || !docTags) {
             return res.json({ success: false, message: "All fields are required" });
         }
+        const uploadResponse = await cloudinary.uploader.upload(fileStr, {
+            upload_preset: 'getMyDocs',
+        });
+        console.log(uploadResponse);
         const docs = await Docs.create({
             docId,
             docTitle,
             docTags,
-            additionalInfo
+            additionalInfo,
+            docLink: uploadResponse
         });
         // const user = await User.findOne({ email: req.user.email })
         const updateuser = await User.updateOne(
