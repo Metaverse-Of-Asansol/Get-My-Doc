@@ -40,7 +40,7 @@ const Dashboard = () => {
         <div className="tags_wrapper_div">
         {tags.map((tag, index) => {
           return (
-              <Link to={`/tagblock/${tag}`}>
+              <Link style={{textDecoration : "none"}} to={`/tagblock/${tag}`}>
                 <Tags_boxes tagName={tag}/>
               </Link>
           );
