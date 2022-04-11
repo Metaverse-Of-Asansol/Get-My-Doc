@@ -7,7 +7,7 @@ require("./config/database").connect();
 const auth = require("./routes/auth");
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://getmydocss.web.app',
   credentials: true,
 }));
 app.use(express.json({ limit: '50mb' }));
