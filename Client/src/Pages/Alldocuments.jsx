@@ -5,6 +5,7 @@ import axios from "axios";
 import "./Styles/Alldocuments.css";
 import Tags_boxes from "../Components/Tags_boxes";
 import file from "../../assets/—Pngtree—file icon_4419863.png.png";
+import { Api } from "../backend";
 
 const Alldocuments = () => {
   let navigate = useNavigate();
@@ -28,7 +29,7 @@ const Alldocuments = () => {
     console.log("Fetch Data");
     const authToken = localStorage.getItem("token");
     const { data } = await axios.get(
-      `/api/v1/getdocs/${pathArray[2].replaceAll("%20", " ")}`,
+      `${Api}getdocs/${pathArray[2].replaceAll("%20", " ")}`,
       {
         withCredentials: true,
         headers: { Authorization: `Bearer ${authToken}` },
@@ -45,27 +46,34 @@ const Alldocuments = () => {
 
   return (
     <Base>
-    <main className="main_section AllDocs_main">
-      <div className="All_doc_head">
-        <h1>All Document Related To {tag}</h1>
-        Here All The Documents Of Specific Tag Will Be Displayed
-      </div>
+      <main className="main_section AllDocs_main">
+        <div className="All_doc_head">
+          <h1>All Document Related To {tag}</h1>
+          Here All The Documents Of Specific Tag Will Be Displayed
+        </div>
 
         {console.log(docs)}
         <div className="tags_wrapper_div">
-        {docs.map((doc, index) => {
-          return (
-            <Link style={{textDecoration : "none"}} key={index} to={`/doc/${doc._id}`}>
+          {docs.map((doc, index) => {
+            return (
+              <Link
+                style={{ textDecoration: "none" }}
+                key={index}
+                to={`/doc/${doc._id}`}
+              >
                 {/* <span>
                   <h4>{doc.docTitle}</h4> <code>{doc.docTags}</code>
                 </span> */}
-                <Tags_boxes tagName={doc.docTitle} tagImg={file}/>
-            </Link>
-          );
-        })}
+                <Tags_boxes tagName={doc.docTitle} tagImg={file} />
+              </Link>
+            );
+          })}
         </div>
         <form>
-          <Link style={{textDecoration : "none"}} to={`/docs/${tag}/createDocument`}>
+          <Link
+            style={{ textDecoration: "none" }}
+            to={`/docs/${tag}/createDocument`}
+          >
             <button className="btn C_doc_btn">Create Document</button>
           </Link>
         </form>

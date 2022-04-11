@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import styles from "./Styles/register.module.css";
 import Base from "../Base";
 import axios from "axios";
+import {Api} from "../backend"
 
 const Register = () => {
   let navigate = useNavigate();
@@ -36,7 +37,7 @@ const Register = () => {
       password: registerdata.password,
       confirmPassword: registerdata.confirmPassword,
     };
-    const { data } = await axios.post("/api/v1/register", userData, {
+    const { data } = await axios.post(`${Api}register`, userData, {
       withCredentials: true,
       crossorigin: true,
     });

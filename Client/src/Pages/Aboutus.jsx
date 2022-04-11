@@ -2,7 +2,8 @@ import React from "react";
 import Base from "../Base";
 import styles from "./Styles/index.module.css"
 import { Link } from "react-router-dom";
-import { FaLinkedin, FaTwitterSquare, FaGithubSquare } from "react-icons/fa"
+import { IoMail } from "react-icons/io5";
+import { FaLinkedin, FaGithubSquare } from "react-icons/fa";
 
 const Aboutus = () => {
   const members = [
@@ -12,7 +13,8 @@ const Aboutus = () => {
       profession: "Full Stack Web Developer",
       github_url: "https://github.com/Abirpal202049",
       linkedin_url: "https://www.linkedin.com/in/abir-pal/",
-      twitter_url: "https://github.com/Dezenix/frontend-reactjs",
+      mail_url: "abirpal282002@gmail.com",
+      image:"https://res.cloudinary.com/sahebcloud/image/upload/v1646982134/AECCC%20Members/AbirPal_ddkviz.jpg"
     },
     {
       id: 2,
@@ -20,7 +22,8 @@ const Aboutus = () => {
       profession: "Backend Developer",
       github_url: "https://github.com/saikatmu31",
       linkedin_url: "https://www.linkedin.com/in/saikat-mukherjee-2a925b1b7",
-      twitter_url: "https://github.com/Dezenix/frontend-reactjs",
+      mail_url: "saikat943422@gmail.com",
+      image:"https://res.cloudinary.com/sahebcloud/image/upload/v1646982136/AECCC%20Members/SaikatMukherjee_tnrgka.jpg"
     },
     {
       id: 3,
@@ -28,7 +31,8 @@ const Aboutus = () => {
       profession: "Frontend Developer",
       github_url: "https://github.com/Aritra777",
       linkedin_url: "https://www.linkedin.com/in/aritra-biswas-13718b228/",
-      twitter_url: "https://github.com/Dezenix/frontend-reactjs",
+      mail_url: "https://github.com/Dezenix/frontend-reactjs",
+      image : "https://testaeccc.web.app/static/media/AritraBiswas.c0cf92b76053d1f0b939.jpg"
     },
     {
       id: 4,
@@ -36,7 +40,8 @@ const Aboutus = () => {
       profession: "Backend Developer",
       github_url: "https://github.com/8-bit-souvik",
       linkedin_url: "https://www.linkedin.com/in/8bitsouvik/",
-      twitter_url: "https://github.com/Dezenix/frontend-reactjs",
+      mail_url: "https://github.com/Dezenix/frontend-reactjs",
+      image:"https://res.cloudinary.com/sahebcloud/image/upload/v1646982134/AECCC%20Members/SouvikMandal_uduvds.jpg"
     },
   ];
 
@@ -48,7 +53,7 @@ const Aboutus = () => {
             <div className={styles.card} key={member.id}>
               <div className={styles.card__details}>
                 <div className={styles.image}>
-                  <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
+                  <img src={member.image} alt="" />
                 </div>
 
                 <div className={styles.details}>
@@ -72,11 +77,11 @@ const Aboutus = () => {
                     <FaLinkedin size="2rem" />
                   </Link>
                   <Link
-                    to={member.twitter_url}
+                    to={member.mail_url}
                     target="_blank"
                     className={styles.three}
                   >
-                    <FaTwitterSquare size="2rem" />
+                    <IoMail size="2rem" />
                   </Link>
                 </div>
               </div>

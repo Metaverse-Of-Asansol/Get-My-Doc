@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Base from "../Base";
 import "./Styles/Createtag.css"
+import {Api} from "../backend"
 
 const Creaetag = () => {
   const [tag, setTag] = useState("");
@@ -23,7 +24,7 @@ const Creaetag = () => {
     e.preventDefault();
     const tagName = tag;
     const authToken = localStorage.getItem("token");
-    const  {data}  = await axios.post("/api/v1/addtag", {tag : tagName}, {
+    const  {data}  = await axios.post(`${Api}addtag`, {tag : tagName}, {
       withCredentials: true,
       headers: { Authorization: `Bearer ${authToken}` },
     });

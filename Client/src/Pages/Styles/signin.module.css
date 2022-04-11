@@ -1,8 +1,9 @@
 .login {
-    background: #f6f5f7;
+    /* background: #f6f5f7; */
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: fit-content;
+    margin: 5em;
   }
   .login_title {
     max-width: 80%;

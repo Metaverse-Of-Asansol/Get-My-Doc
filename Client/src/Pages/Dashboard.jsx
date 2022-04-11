@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Base from "../Base";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import {Api} from "../backend"
 import Tags_boxes from "../Components/Tags_boxes";
 import "./Styles/Dashboard.css"
 import folder from "../../assets/folder1.png"
@@ -12,7 +13,7 @@ const Dashboard = () => {
 
   const getAllTags = async () => {
     const authToken = localStorage.getItem("token");
-    const { data } = await axios.get("/api/v1/getalltags", {
+    const { data } = await axios.get(`${Api}getalltags`, {
       withCredentials: true,
       headers: { Authorization: `Bearer ${authToken}` },
     });

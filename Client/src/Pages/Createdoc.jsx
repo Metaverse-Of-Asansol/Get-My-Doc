@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import {Api} from "../backend"
 import Base from "../Base";
 
 const Createdoc = () => {
@@ -38,7 +39,7 @@ const Createdoc = () => {
 
   const getAllTags = async () => {
     const authToken = localStorage.getItem("token");
-    const { data } = await axios.get("/api/v1/getalltags", {
+    const { data } = await axios.get(`${Api}getalltags`, {
       withCredentials: true,
       headers: { Authorization: `Bearer ${authToken}` },
     });
@@ -72,7 +73,7 @@ const Createdoc = () => {
       additionalInfo: registerdata.additionalInfo,
     };
     const authToken = localStorage.getItem("token");
-    const { data } = await axios.post("/api/v1/addDocument", userData, {
+    const { data } = await axios.post(`${Api}addDocument`, userData, {
       withCredentials: true,
       headers: { Authorization: `Bearer ${authToken}` },
     });
